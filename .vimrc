@@ -1,3 +1,4 @@
+"~/.vimrc
 filetype plugin indent on
 syntax enable
 
