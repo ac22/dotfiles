@@ -1,6 +1,15 @@
-"~/.vimrc
 filetype plugin indent on
 syntax enable
+
+call plug#begin('~/.vim/plugged')
+
+" Use single quotes
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'rust-lang/rust.vim'
+Plug 'nanotech/jellybeans.vim'
+
+call plug#end()
 
 set background=dark
 colorscheme jellybeans
@@ -23,7 +32,6 @@ set nobackup
 set nowb
 set noswapfile
 
-set laststatus=2
 set showcmd
 set number
 
