@@ -7,12 +7,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'rust-lang/rust.vim'
-Plug 'nanotech/jellybeans.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
 set background=dark
-colorscheme jellybeans
+colorscheme base16-default
 hi Normal ctermbg=none
 hi NonText ctermbg=none
 hi LineNr ctermbg=none
