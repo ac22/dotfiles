@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 " Use single quotes
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
-Plug 'rust-lang/rust.vim'
 Plug 'chriskempson/base16-vim'
 
 call plug#end()
@@ -17,10 +16,13 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 hi LineNr ctermbg=none
 
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
 set wildmenu
 set ruler
-
-set textwidth=80
 
 set ignorecase
 set smartcase
