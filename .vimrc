@@ -45,6 +45,9 @@ set so=5
 inoremap jk <ESC>
 vnoremap jk <ESC> 
 
+map <C-j> :bnext<CR>
+map <C-k> :bprevious<CR>
+
 nmap <space> zt
 nmap n nzz
 nmap N Nzz
