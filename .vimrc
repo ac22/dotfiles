@@ -3,24 +3,29 @@ syntax enable
 
 call plug#begin('~/.vim/plugged')
 
-" Use single quotes
+" general stuff
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
-Plug 'altercation/vim-colors-solarized'
-Plug 'bling/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" javascript stuff
+Plug 'ternjs/tern_for_vim'
+Plug 'valloric/youcompleteme'
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
+Plug 'heavenshell/vim-jsdoc'
 
 call plug#end()
 
-set background=light
-colorscheme solarized
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-hi LineNr ctermbg=none
+set background=dark
+colorscheme gruvbox
 
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" use smaller size tabs for javascript files
+autocmd Filetype javascript setlocal ts=2 sw=2
 
 set wildmenu
 set ruler
@@ -36,14 +41,17 @@ set nowb
 set noswapfile
 
 set showcmd
-set number
 
 set backspace=indent,eol,start
 
 set so=5
 
+set completeopt-=preview
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = "solarized"
 
 "Key Mappings
 inoremap jk <ESC>
@@ -51,9 +59,3 @@ vnoremap jk <ESC>
 
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
-
-nmap <space> zt
-nmap n nzz
-nmap N Nzz
-
-command! Wq wq
