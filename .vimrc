@@ -9,6 +9,8 @@ Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'rust-lang/rust.vim'
+
 " javascript stuff
 Plug 'ternjs/tern_for_vim'
 Plug 'valloric/youcompleteme'
@@ -21,11 +23,11 @@ call plug#end()
 set background=dark
 colorscheme gruvbox
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-" use smaller size tabs for javascript files
-autocmd Filetype javascript setlocal ts=2 sw=2
+" use larger size tabs for python files
+autocmd Filetype python setlocal ts=4 sw=4
 
 set wildmenu
 set ruler
@@ -48,12 +50,13 @@ set so=5
 
 set completeopt-=preview
 
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:jsdoc_allow_input_prompt = 1
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:jsx_ext_required = 0 " Do not require .jsx extension to format jsx syntax
 
 "Key Mappings
 inoremap jk <ESC>
