@@ -23,6 +23,8 @@ call plug#end()
 set background=dark
 colorscheme gruvbox
 
+hi Normal ctermbg=none
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
