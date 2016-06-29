@@ -49,6 +49,8 @@ set so=5
 
 set completeopt-=preview
 
+set wildignore+=**/node_modules
+
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_javascript_checkers = ['eslint']
