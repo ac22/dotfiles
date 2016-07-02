@@ -23,7 +23,9 @@ call plug#end()
 
 set background=dark
 colorscheme gruvbox
-set termguicolors
+if $TERM_PROGRAM =~ "iTerm"
+  set termguicolors
+endif
 
 set tabstop=2
 set shiftwidth=2
