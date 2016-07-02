@@ -3,26 +3,28 @@ syntax enable
 
 call plug#begin('~/.vim/plugged')
 
-" general stuff
-Plug 'morhetz/gruvbox'
+" General
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rust-lang/rust.vim'
 
-" javascript stuff
+" Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
-hi Normal ctermbg=none
+call togglebg#map("<F5>")
 
 set tabstop=2
 set shiftwidth=2
@@ -55,7 +57,7 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_javascript_checkers = ['eslint']
 
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:jsx_ext_required = 0 " Do not require .jsx extension to format jsx syntax
 
 "Key Mappings
