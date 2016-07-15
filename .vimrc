@@ -19,6 +19,9 @@ Plug 'mxw/vim-jsx'
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" C
+Plug 'vivien/vim-linux-coding-style'
+
 call plug#end()
 
 set background=dark
