@@ -25,10 +25,8 @@ Plug 'vivien/vim-linux-coding-style'
 call plug#end()
 
 set background=dark
+let g:gruvbox_termcolors=16
 colorscheme gruvbox
-if $TERM_PROGRAM =~ "iTerm"
-  set termguicolors
-endif
 
 set tabstop=2
 set shiftwidth=2
