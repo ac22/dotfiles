@@ -68,3 +68,5 @@ vnoremap jk <ESC>
 
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
+map <C-l> <C-w>l<C-w>
+map <C-h> <C-w>h<C-w>
