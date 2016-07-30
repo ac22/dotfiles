@@ -4,7 +4,7 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -25,8 +25,7 @@ Plug 'vivien/vim-linux-coding-style'
 call plug#end()
 
 set background=dark
-let g:gruvbox_termcolors=16
-colorscheme gruvbox
+colorscheme solarized
 
 set tabstop=2
 set shiftwidth=2
@@ -51,6 +50,7 @@ set backspace=indent,eol,start
 
 set so=5
 
+set diffopt+=vertical
 set completeopt-=preview
 
 set wildignore+=**/node_modules
@@ -70,3 +70,5 @@ map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-l> <C-w>l<C-w>
 map <C-h> <C-w>h<C-w>
+
+call togglebg#map("<F5>")
