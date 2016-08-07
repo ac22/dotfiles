@@ -43,6 +43,7 @@ set so=5
 set diffopt+=vertical
 set completeopt-=preview
 set wildignore+=**/node_modules
+set laststatus=2
 
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
@@ -53,7 +54,7 @@ let g:jsx_ext_required = 0 " Do not require .jsx extension to format jsx syntax
 
 "Key Mappings
 inoremap jk <ESC>
-vnoremap jk <ESC> 
+vnoremap jk <ESC>
 
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
