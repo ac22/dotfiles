@@ -48,6 +48,7 @@ set laststatus=2
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:jsx_ext_required = 0 " Do not require .jsx extension to format jsx syntax
