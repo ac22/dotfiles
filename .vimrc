@@ -16,20 +16,15 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
-" Rust
-Plug 'rust-lang/rust.vim'
-
-" C
-Plug 'vivien/vim-linux-coding-style'
+" Go
+Plug 'fatih/vim-go'
 
 call plug#end()
 
 set background=dark
 colorscheme solarized
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
+au FileType javascript set ts=2 sw=2 expandtab
 
 set wildmenu
 set ruler
