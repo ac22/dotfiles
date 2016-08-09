@@ -39,6 +39,8 @@ set completeopt-=preview
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 
+au FileType javascript set ts=2 sw=2 expandtab
+
 " Set up tab for Deoplete completion
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
