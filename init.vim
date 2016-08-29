@@ -20,9 +20,9 @@ Plug 'fatih/vim-go'
 call plug#end()
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme gruvbox
+set termguicolors
 
 set ruler
 set ignorecase
@@ -39,6 +39,7 @@ set completeopt-=preview
 
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:go_fmt_command = "goimports"
 
 au FileType javascript set ts=2 sw=2 expandtab
 
