@@ -53,8 +53,6 @@ autocmd! BufWritePost * Neomake
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
-map <Space> <Leader>
-nnoremap <Leader>x i
 map <C-p> :FZF<CR>
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
@@ -62,4 +60,6 @@ map <C-l> <C-w>l<C-w>
 map <C-h> <C-w>h<C-w>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+
+" Toggle background
+map <C-b> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
