@@ -27,6 +27,7 @@ colorscheme gruvbox
 
 au FileType javascript set ts=2 sw=2 expandtab
 
+set nu
 set wildmenu
 set ruler
 set ignorecase

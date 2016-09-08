@@ -24,6 +24,7 @@ set background=dark
 colorscheme gruvbox
 set termguicolors
 
+set nu
 set ruler
 set ignorecase
 set smartcase
