@@ -4,11 +4,11 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -42,6 +42,7 @@ set diffopt+=vertical
 set completeopt-=preview
 set wildignore+=**/node_modules
 set laststatus=2
+set mouse=a
 
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
