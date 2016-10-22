@@ -5,3 +5,4 @@ fi
 alias vi="/usr/local/bin/vim"
 alias rgssh="ssh anand@devbox.rotogrinders.com"
 alias py="/usr/local/bin/python3"
+alias grep="grep --color=auto"
