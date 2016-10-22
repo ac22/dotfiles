@@ -16,8 +16,6 @@ Plug 'junegunn/fzf.vim'
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-" C
-Plug 'vivien/vim-linux-coding-style'
 
 call plug#end()
 
