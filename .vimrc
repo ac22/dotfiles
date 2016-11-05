@@ -43,6 +43,7 @@ set completeopt-=preview
 set wildignore+=**/node_modules
 set laststatus=2
 set mouse=a
+set tw=80
 
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
