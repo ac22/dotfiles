@@ -4,7 +4,7 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -23,11 +23,10 @@ call plug#end()
 
 set background=dark
 set termguicolors
-colorscheme gruvbox
+colorscheme molokai
 
 au FileType javascript set ts=2 sw=2 expandtab
 
-set nu
 set wildmenu
 set ruler
 set ignorecase
