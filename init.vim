@@ -25,9 +25,7 @@ set termguicolors
 colorscheme gruvbox
 
 " General settings
-set autoindent
 set autowrite
-set cmdheight=1
 set completeopt-=preview
 set diffopt+=vertical
 set expandtab
@@ -36,7 +34,6 @@ set ignorecase
 set list
 set mouse-=a
 set nohlsearch
-set ruler
 set smartcase
 set wildignore+=**/node_modules
 
