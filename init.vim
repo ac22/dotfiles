@@ -10,19 +10,22 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'zchee/deoplete-jedi'
 " Javascript
+Plug 'carlitux/deoplete-ternjs'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Python
 Plug 'nvie/vim-flake8'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
-set background=dark
 set termguicolors
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
+set background=dark
 
 " General settings
 set autowrite
@@ -51,11 +54,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " Fzf
 let g:fzf_layout = { 'window': 'enew' }
 " Vim-jsx
 let g:jsx_ext_required = 0
 " Python config
+let python_highlight_all = 1
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
