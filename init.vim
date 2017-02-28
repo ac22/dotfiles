@@ -3,21 +3,19 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 " Javascript
-Plug 'carlitux/deoplete-ternjs'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Python
 Plug 'nvie/vim-flake8'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
@@ -52,17 +50,18 @@ let g:ale_lint_on_text_changed = 0
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " Fzf
 let g:fzf_layout = { 'window': 'enew' }
-" Vim-jsx
-let g:jsx_ext_required = 0
 " Python config
-let python_highlight_all = 1
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
+let python_highlight_all = 1
+" Vim-jsx
+let g:jsx_ext_required = 0
+" YouCompleteMe
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 " Key Mappings
 inoremap jk <ESC>
@@ -70,8 +69,6 @@ vnoremap jk <ESC>
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-p> :FZF<CR>
-" Use tab for autocompletion with deoplete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 map <C-b> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
