@@ -12,6 +12,7 @@ alias py="python3"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 # add color to man pages
 man() {
         env \
