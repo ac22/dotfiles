@@ -1,6 +1,9 @@
 set -o vi
 bind '"jk":vi-movement-mode'
 bind '"jk":"\e"'
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export GOPATH="$HOME/workspace/go"
+export PATH=$PATH:$GOPATH/bin
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
@@ -8,11 +11,8 @@ alias ls="ls -G"
 alias vi="/usr/local/bin/nvim"
 alias rgssh="ssh anand@devbox.rotogrinders.com"
 alias grep="grep --color=auto"
-alias py="python3"
-export FZF_DEFAULT_COMMAND='ag -g ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 # add color to man pages
 man() {
         env \
