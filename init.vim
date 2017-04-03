@@ -39,16 +39,16 @@ au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-" ALE
+" ale
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
-" Airline
+" airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-" Deoplete
+" deoplete
 let g:deoplete#enable_at_startup = 1
-" Fzf
+" fzf
 let g:fzf_layout = { 'window': 'enew' }
 " vim-go
 let g:go_highlight_functions = 1
@@ -57,7 +57,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-" Vim-jsx
+" vim-jsx
 let g:jsx_ext_required = 0
 
 " Key Mappings
