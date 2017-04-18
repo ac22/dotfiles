@@ -51,18 +51,18 @@ let g:deoplete#enable_at_startup = 1
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_term_mode = "split"
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " vim-jsx
 let g:jsx_ext_required = 0
 
 " Key Mappings
 inoremap jk <ESC>
 vnoremap jk <ESC>
+let mapleader = ","
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-p> :FZF<CR>
