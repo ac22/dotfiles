@@ -19,7 +19,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 call plug#end()
 
-set background=dark
+set background=light
 colorscheme solarized
 
 set wildmenu

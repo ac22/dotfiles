@@ -20,7 +20,7 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Color settings
-set background=dark
+set background=light
 colorscheme solarized
 
 " General settings
