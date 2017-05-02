@@ -30,14 +30,11 @@ set diffopt+=vertical
 set expandtab
 set fileformat=unix
 set ignorecase
-set mouse-=a
 set nohlsearch
 set smartcase
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
-
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " ale
 let g:ale_lint_on_enter = 0
@@ -48,9 +45,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'./bin/gocode'
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " vim-go
+let g:go_fmt_command = "goimports"
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 let g:go_term_mode = "split"

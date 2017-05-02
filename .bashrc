@@ -2,7 +2,7 @@ set -o vi
 bind '"jk":vi-movement-mode'
 bind '"jk":"\e"'
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export GOPATH="$HOME/workspace/go"
+export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
 if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
