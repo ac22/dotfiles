@@ -3,15 +3,14 @@ syntax enable
 
 call plug#begin()
 " General
-Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
 " Go
 Plug 'fatih/vim-go'
 " Javascript
@@ -20,7 +19,8 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 set background=light
-colorscheme solarized
+let g:gruvbox_invert_selection = 0
+colorscheme gruvbox
 
 set wildmenu
 set ruler
@@ -46,10 +46,6 @@ set autoindent    " align the new line indent with the previous line
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 
-" ALE
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1

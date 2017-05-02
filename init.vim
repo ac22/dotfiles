@@ -1,8 +1,8 @@
 call plug#begin()
 " General
-Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -21,7 +21,9 @@ call plug#end()
 
 " Color settings
 set background=light
-colorscheme solarized
+set termguicolors
+let g:gruvbox_invert_selection = 0
+colorscheme gruvbox
 
 " General settings
 set autowrite
