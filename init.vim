@@ -1,8 +1,8 @@
 call plug#begin()
 " General
+Plug 'alterication/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -10,20 +10,17 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-" Go
-Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 " Javascript
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+" Python
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
-set background=light
-set termguicolors
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox
+set background=dark
+colorscheme solarized
 
 " General settings
 set autowrite
@@ -33,10 +30,12 @@ set expandtab
 set fileformat=unix
 set ignorecase
 set nohlsearch
+set noshowmatch
 set smartcase
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
 
 " ale
 let g:ale_lint_on_enter = 0
@@ -47,16 +46,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'./bin/gocode'
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
-" vim-go
-let g:go_fmt_command = "goimports"
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_term_mode = "split"
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " vim-jsx
 let g:jsx_ext_required = 0
 
