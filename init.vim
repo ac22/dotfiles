@@ -1,8 +1,8 @@
 call plug#begin()
 " General
-Plug 'alterication/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -19,8 +19,9 @@ Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
-set background=dark
-colorscheme solarized
+let g:gruvbox_invert_selection = 0
+set background=light
+colorscheme gruvbox
 
 " General settings
 set autowrite
@@ -48,13 +49,16 @@ let g:airline_powerline_fonts = 1
 let g:deoplete#enable_at_startup = 1
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
+" python
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 " vim-jsx
 let g:jsx_ext_required = 0
 
 " Key Mappings
 inoremap jk <ESC>
 vnoremap jk <ESC>
-let mapleader = ","
+map <Space> <leader>
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-p> :FZF<CR>

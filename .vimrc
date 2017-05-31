@@ -11,8 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Go
-Plug 'fatih/vim-go'
 " Javascript
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -51,10 +49,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " Fzf
 let g:fzf_layout = { 'window': 'enew' }
-" Vim-go
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_term_mode = "split"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " Vim-jsx
