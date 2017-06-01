@@ -36,12 +36,15 @@ set smartcase
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
+autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
 " ale
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
