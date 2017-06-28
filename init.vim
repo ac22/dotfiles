@@ -20,7 +20,7 @@ call plug#end()
 
 " Color settings
 let g:gruvbox_invert_selection = 0
-set background=light
+set background=dark
 colorscheme gruvbox
 
 " General settings
@@ -50,6 +50,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " python
