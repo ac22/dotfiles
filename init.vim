@@ -20,7 +20,13 @@ call plug#end()
 
 " Color settings
 let g:gruvbox_invert_selection = 0
-set background=dark
+" Condiionally set background based on current profile
+let iterm_profile = $ITERM_PROFILE
+if iterm_profile == "dark"
+    set background=dark
+else
+    set background=light
+endif
 colorscheme gruvbox
 
 " General settings
