@@ -38,6 +38,7 @@ set fileformat=unix
 set ignorecase
 set nohlsearch
 set noshowmatch
+set noswapfile
 set smartcase
 set wildignore+=**/node_modules
 
@@ -49,8 +50,6 @@ autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
