@@ -40,6 +40,7 @@ set nohlsearch
 set noshowmatch
 set noswapfile
 set smartcase
+set termguicolors
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
