@@ -1,9 +1,9 @@
 call plug#begin()
 " General
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'romainl/flattened'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -19,15 +19,11 @@ Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
-let g:gruvbox_invert_selection = 0
-" Condiionally set background based on current profile
-let iterm_profile = $ITERM_PROFILE
-if iterm_profile == "dark"
-    set background=dark
-else
-    set background=light
+if (has("termguicolors"))
+ set termguicolors
 endif
-colorscheme gruvbox
+set background=light
+colorscheme flattened_light
 
 " General settings
 set autowrite
@@ -44,8 +40,6 @@ set termguicolors
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
-autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
 " ale
 let g:ale_lint_on_enter = 0
@@ -74,7 +68,6 @@ map <Space> <leader>
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-p> :FZF<CR>
-map <C-b> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
 " Use Tab for autocomplete
