@@ -3,12 +3,8 @@ bind '"jk":vi-movement-mode'
 bind '"jk":"\e"'
 
 export CLICOLOR=1
-export FZF_DEFAULT_COMMAND='ag -g ""'
-export VIRTUALENV_PYTHON='/usr/local/bin/python3'
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/workspace/python
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export PS1="\u@\h:\W\$ "
-source /usr/local/bin/virtualenvwrapper.sh
 
 alias grep="grep --color=auto"
 alias py="python3"
@@ -18,7 +14,6 @@ alias vi="/usr/local/bin/nvim"
 
 [ -f `brew --prefix`/etc/bash_completion ] && source `brew --prefix`/etc/bash_completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh ] && source $HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh
 
 # add color for man pages
 man() {
