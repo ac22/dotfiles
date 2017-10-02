@@ -1,15 +1,17 @@
 call plug#begin()
 " General
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'romainl/flattened'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+" C
+Plug 'zchee/deoplete-clang'
 " Javascript
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx'
@@ -22,8 +24,8 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-set background=light
-colorscheme flattened_light
+set background=dark
+colorscheme base16-onedark
 
 " General settings
 set autowrite
@@ -36,7 +38,6 @@ set nohlsearch
 set noshowmatch
 set noswapfile
 set smartcase
-set termguicolors
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
@@ -52,6 +53,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/include/clang'
+let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib'
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
