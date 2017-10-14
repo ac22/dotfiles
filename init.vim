@@ -1,7 +1,7 @@
 call plug#begin()
 " General
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
@@ -24,8 +24,8 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-set background=dark
-colorscheme base16-onedark
+set background=light
+colorscheme PaperColor
 
 " General settings
 set autowrite
