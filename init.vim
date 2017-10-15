@@ -1,9 +1,9 @@
 call plug#begin()
 " General
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -24,8 +24,9 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-set background=light
-colorscheme PaperColor
+set background=dark
+let g:solarized_diffmode = "high"
+colorscheme solarized8_dark
 
 " General settings
 set autowrite
