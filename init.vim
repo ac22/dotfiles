@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -24,9 +24,8 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-set background=dark
-let g:solarized_diffmode = "high"
-colorscheme solarized8_dark
+set background=light
+colorscheme gruvbox
 
 " General settings
 set autowrite
