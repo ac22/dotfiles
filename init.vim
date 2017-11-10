@@ -24,7 +24,9 @@ call plug#end()
 if (has("termguicolors"))
  set termguicolors
 endif
-set background=light
+set background=dark
+let g:gruvbox_italic = 1
+let g:gruvbox_invert_selection = 0
 colorscheme gruvbox
 
 " General settings
@@ -47,7 +49,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = 'Δ'
+let g:ale_sign_warning = '△'
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
