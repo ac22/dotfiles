@@ -4,7 +4,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -26,9 +26,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 set background=dark
-let g:gruvbox_italic = 1
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox
+let g:solarized_diffmode = 'high'
+let g:solarized_term_italics = 1
+colorscheme solarized8_flat
 
 " General settings
 set autowrite
@@ -54,6 +54,7 @@ let g:ale_sign_warning = '△'
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg = 'dark'
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/include/clang'
