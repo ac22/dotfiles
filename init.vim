@@ -1,7 +1,6 @@
 call plug#begin()
 " General
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-solarized8'
@@ -18,6 +17,7 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Python
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'zchee/deoplete-jedi'
 call plug#end()
 
@@ -57,6 +57,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg = 'dark'
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/include/clang'
 let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib'
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
