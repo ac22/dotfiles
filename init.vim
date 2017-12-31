@@ -18,6 +18,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vim-python/python-syntax'
 Plug 'zchee/deoplete-jedi'
 call plug#end()
 
@@ -65,6 +66,7 @@ let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " python
+let g:python_highlight_all = 1
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 " vim-jsx
