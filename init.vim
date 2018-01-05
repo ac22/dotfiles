@@ -1,9 +1,9 @@
 call plug#begin()
 " General
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -27,9 +27,8 @@ if (has("termguicolors"))
  set termguicolors
 endif
 set background=dark
-let g:solarized_diffmode = 'high'
-let g:solarized_term_italics = 1
-colorscheme solarized8_flat
+let g:onedark_terminal_italics = 1
+colorscheme onedark
 
 " General settings
 set autowrite
@@ -40,6 +39,7 @@ set fileformat=unix
 set ignorecase
 set nohlsearch
 set noshowmatch
+set noshowmode
 set noswapfile
 set smartcase
 set wildignore+=**/node_modules
