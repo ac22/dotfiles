@@ -16,6 +16,9 @@ Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+" Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript'
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -32,7 +35,6 @@ colorscheme onedark
 
 " General settings
 set autowrite
-set completeopt-=preview
 set diffopt+=vertical
 set expandtab
 set fileformat=unix
@@ -50,7 +52,7 @@ au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_sign_error = '✗'
+let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '△'
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -63,6 +65,7 @@ let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/5.0.0/include/clang'
 let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/5.0.0/lib/libclang.dylib'
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
+let g:deoplete#sources#ternjs#filetypes = ['jsx']
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " python
