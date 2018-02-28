@@ -4,6 +4,8 @@ bind '"jk":"\e"'
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
 export PS1="\u@\h:\W\$ "
 
 alias grep="grep --color=auto"
