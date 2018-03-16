@@ -4,8 +4,6 @@ bind '"jk":"\e"'
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$(go env GOPATH)/bin
 export PS1="\u@\h:\W\$ "
 
 alias grep="grep --color=auto"
@@ -15,6 +13,7 @@ alias vi="/usr/local/bin/nvim"
 
 [ -f `brew --prefix`/etc/bash_completion ] && source `brew --prefix`/etc/bash_completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 
 # add color for man pages
 man() {
