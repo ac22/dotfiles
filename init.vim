@@ -1,9 +1,9 @@
 call plug#begin()
 " General
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -24,11 +24,11 @@ call plug#end()
 
 " Color settings
 if (has("termguicolors"))
- set termguicolors
+        set termguicolors
 endif
 set background=dark
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+let g:gruvbox_italic = 1
+colorscheme gruvbox
 
 " General settings
 set autowrite
@@ -41,6 +41,7 @@ set nohlsearch
 set noshowmatch
 set noshowmode
 set noswapfile
+set number
 set smartcase
 set wildignore+=**/node_modules
 
