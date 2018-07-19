@@ -15,7 +15,6 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 " Typescript
 Plug 'leafgarland/typescript-vim'
-Plug 'mhartington/nvim-typescript'
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -26,7 +25,7 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=dark
+set background=light
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 
@@ -42,6 +41,7 @@ set noshowmatch
 set noshowmode
 set noswapfile
 set number
+set relativenumber
 set smartcase
 set wildignore+=**/node_modules
 
@@ -61,7 +61,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
-let g:nvim_typescript#javascript_support = 1
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " python
