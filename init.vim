@@ -25,7 +25,7 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=light
+set background=dark
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 
@@ -40,8 +40,6 @@ set nohlsearch
 set noshowmatch
 set noshowmode
 set noswapfile
-set number
-set relativenumber
 set smartcase
 set wildignore+=**/node_modules
 
