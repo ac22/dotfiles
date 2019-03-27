@@ -1,15 +1,13 @@
 call plug#begin()
 " General
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
 " Javascript
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
@@ -18,16 +16,14 @@ Plug 'leafgarland/typescript-vim'
 " Python
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
-Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " Color settings
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=dark
-let g:gruvbox_italic = 1
-colorscheme gruvbox
+set background=light
+colorscheme onehalflight
 
 " General settings
 set autowrite
@@ -40,11 +36,14 @@ set nohlsearch
 set noshowmatch
 set noshowmode
 set noswapfile
+set number
 set smartcase
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 au FileType typescript set shiftwidth=2 softtabstop=2 tabstop=2
+au BufNewFile,BufRead *.tabla set tabstop=12 noexpandtab list nonu
+au BufNewFile,BufRead *.txt set nonu
 
 " ale
 let g:ale_lint_on_enter = 0

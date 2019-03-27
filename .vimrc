@@ -5,7 +5,7 @@ call plug#begin()
 " General
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -16,9 +16,8 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 call plug#end()
 
-set background=light
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox
+set background=dark
+colorscheme onehalflight
 
 set wildmenu
 set ruler
@@ -26,6 +25,7 @@ set ignorecase
 set smartcase
 set incsearch
 set showmatch
+set number
 set nobackup
 set nowb
 set noswapfile
@@ -46,22 +46,17 @@ au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 " Fzf
 let g:fzf_layout = { 'window': 'enew' }
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
 " Vim-jsx
 let g:jsx_ext_required = 0
 
 " Key Mappings
 inoremap jk <ESC>
 vnoremap jk <ESC>
-let mapleader = ","
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
 map <C-p> :FZF<CR>
-map <C-b> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
 " Use Tab for autocomplete
