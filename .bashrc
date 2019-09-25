@@ -7,13 +7,11 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 export GOPATH="/Users/anand/.go"
 export GOBIN="$GOPATH/bin"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$GOPATH:$GOBIN:$PATH"
-export PS1="\u@\h:\W\$ "
+export PS1='\[\e[1;32m\]\u@\h\[\e[1;00m\]:\[\e[1;34m\]\w\[\e[1;35m\]$(type -t __git_ps1 &> /dev/null && __git_ps1)\[\e[1;00m\] \n\$ '
 
 alias grep="grep --color=auto"
 alias py="python3"
 alias vi="/usr/local/bin/nvim"
-alias remote-mpv="node /Users/anand/code/javascript/mpv-remote/app.js"
-alias vv="mpv --input-ipc-server=/tmp/mpvsocket *.mkv"
 
 [ -f `brew --prefix`/etc/bash_completion ] && source `brew --prefix`/etc/bash_completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

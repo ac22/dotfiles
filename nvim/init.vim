@@ -1,8 +1,8 @@
 call plug#begin()
 " General
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -22,9 +22,9 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=light
-let g:gruvbox_italic = 1
-colorscheme gruvbox
+set background=dark
+let g:onedark_terminal_italics = 1
+colorscheme onedark
 
 " General settings
 set autowrite
@@ -82,9 +82,6 @@ set updatetime=300
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
