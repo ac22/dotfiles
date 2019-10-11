@@ -1,13 +1,23 @@
-set -o vi
-bind '"jk":vi-movement-mode'
-bind '"jk":"\e"'
+bindkey -v
+bindkey 'jk' vi-cmd-mode
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export GOPATH="/Users/anand/.go"
 export GOBIN="$GOPATH/bin"
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$GOPATH:$GOBIN:$PATH"
-export PS1='\[\e[1;33m\]\u\[\e[0m\]@\[\e[1;32m\]\h\[\e[1;00m\]:\[\e[1;34m\]\w\[\e[1;35m\]$(type -t __git_ps1 &> /dev/null && __git_ps1)\[\e[1;00m\] \n\$ '
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '(%b)'
+# enable the default zsh completions!
+autoload -Uz compinit && compinit
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+NEWLINE=$'\n'
+setopt PROMPT_SUBST
+export PS1='%F{yellow}%n%F{white}@%F{green}%m%F{white}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{white}$ '
 
 alias grep="grep --color=auto"
 alias py="python3"
@@ -17,9 +27,11 @@ function json_diff() {
         diff <(gron $1) <(gron $2)
 }
 
-[ -f `brew --prefix`/etc/bash_completion ] && source `brew --prefix`/etc/bash_completion
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
+fpath=(~/.zsh $fpath)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 # add color for man pages
 man() {
