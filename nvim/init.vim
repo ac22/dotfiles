@@ -1,8 +1,8 @@
 call plug#begin()
 " General
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -23,8 +23,8 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=dark
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+let g:solarized_diffmode = "high"
+colorscheme solarized8_flat
 
 " General settings
 set autowrite
@@ -33,17 +33,16 @@ set diffopt+=vertical
 set expandtab
 set fileformat=unix
 set ignorecase
-set nohlsearch
+set hlsearch
 set noshowmatch
 set noshowmode
 set noswapfile
-set number
+set nonumber
 set smartcase
 set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 au FileType typescript set shiftwidth=2 softtabstop=2 tabstop=2
-au BufNewFile,BufRead *.txt set nonu
 autocmd BufWritePre *.py execute ':Black'
 
 " airline

@@ -17,7 +17,7 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
-export PS1='%F{yellow}%n%F{white}@%F{green}%m%F{white}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{white}$ '
+export PS1='%F{yellow}%n%F{reset_color}@%F{green}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
 
 alias grep="grep --color=auto"
 alias py="python3"
