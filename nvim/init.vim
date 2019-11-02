@@ -1,8 +1,8 @@
 call plug#begin()
 " General
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-solarized8'
+Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -12,7 +12,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Javascript
-Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 " Python
 Plug 'psf/black'
 Plug 'vim-python/python-syntax'
@@ -22,18 +22,21 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=dark
-let g:solarized_diffmode = "high"
-colorscheme solarized8_flat
+set background=light
+let g:gruvbox_italic = 1
+colorscheme gruvbox
+" Use lighter background for warning/error windows
+hi CocFloating guibg=#f9f5d7
 
 " General settings
 set autowrite
 set completeopt-=preview
+set clipboard+=unnamed
 set diffopt+=vertical
 set expandtab
 set fileformat=unix
 set ignorecase
-set hlsearch
+set nohlsearch
 set noshowmatch
 set noshowmode
 set noswapfile

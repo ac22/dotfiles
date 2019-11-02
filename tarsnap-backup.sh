@@ -1,4 +1,5 @@
 #!/bin/sh
 /usr/local/bin/tarsnap -c \
-        -f "$(uname -n)-$(date +%Y-%m-%d_%H-%M-%S)" \
-        /Users/anand/Documents
+	-v \
+	-f "$(uname -n)-$(date +%Y-%m-%d_%H-%M-%S)" \
+	/Users/anand/Documents
