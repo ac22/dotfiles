@@ -11,8 +11,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Javascript
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 " Python
 Plug 'psf/black'
 Plug 'vim-python/python-syntax'
@@ -140,6 +138,8 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" Use `:Prettier` to format via prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
