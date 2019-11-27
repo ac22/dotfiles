@@ -1,0 +1,10 @@
+[user]
+	name = Anand Chandran
+	email = hello@achandran.com
+[color]
+	ui = auto
+[core]
+        editor = /usr/local/bin/nvim
+	excludesfile = /Users/anand/.gitignore_global
+[credential]
+        helper = osxkeychain
