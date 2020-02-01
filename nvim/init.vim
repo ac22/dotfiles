@@ -44,6 +44,10 @@ set wildignore+=**/node_modules
 
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 au FileType typescript set shiftwidth=2 softtabstop=2 tabstop=2
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
+autocmd BufEnter *.tsv set noexpandtab list completeopt-=i
+autocmd BufEnter *.tsv inoremap <TAB> <C-V><TAB>
+autocmd BufEnter *.tsv execute ':CocDisable'
 autocmd BufWritePre *.py execute ':Black'
 
 " airline
@@ -63,7 +67,7 @@ vnoremap jk <ESC>
 let mapleader = " "
 map <C-j> :bnext<CR>
 map <C-k> :bprevious<CR>
-map <C-p> :FZF<CR>
+map <C-p> :GFiles --exclude-standard --others --cached<CR>
 nmap <silent> <C-h> <Plug>(coc-diagnostic-prev)
 nmap <silent> <C-l> <Plug>(coc-diagnostic-next)
 
