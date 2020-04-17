@@ -45,7 +45,7 @@ set wildignore+=**/node_modules
 au FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
 au FileType typescript set shiftwidth=2 softtabstop=2 tabstop=2
 au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
-autocmd BufEnter *.tsv set noexpandtab list completeopt-=i
+autocmd BufEnter *.tsv set noexpandtab list completeopt-=i tabstop=16
 autocmd BufEnter *.tsv inoremap <TAB> <C-V><TAB>
 autocmd BufEnter *.tsv execute ':CocDisable'
 autocmd BufWritePre *.py execute ':Black'
