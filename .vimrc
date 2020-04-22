@@ -3,9 +3,9 @@ syntax enable
 
 call plug#begin()
 " General
+Plug 'cormacrelf/vim-colors-github'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -16,8 +16,8 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 call plug#end()
 
-set background=dark
-colorscheme onehalflight
+set background=light
+colorscheme github
 
 set wildmenu
 set ruler

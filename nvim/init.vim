@@ -1,8 +1,8 @@
 call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
+Plug 'cormacrelf/vim-colors-github'
 Plug 'junegunn/fzf.vim'
-Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -21,10 +21,7 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=light
-let g:gruvbox_italic = 1
-colorscheme gruvbox
-" Use lighter background for warning/error windows
-hi CocFloating guibg=#f9f5d7
+colorscheme github
 
 " General settings
 set autowrite
