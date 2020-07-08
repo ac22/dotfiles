@@ -1,7 +1,6 @@
 call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -9,8 +8,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'gruvbox-community/gruvbox'
 " Python
 Plug 'psf/black'
 Plug 'vim-python/python-syntax'
@@ -21,7 +19,8 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=light
-colorscheme github
+let g:gruvbox_invert_selection = 0
+colorscheme gruvbox
 
 " General settings
 set autowrite
@@ -53,10 +52,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:fzf_layout = { 'window': 'enew' }
 " python
 let g:python_highlight_all = 1
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
-" go
-let g:go_fmt_command = "goimports"
 
 " Key Mappings
 inoremap jk <ESC>
@@ -152,6 +147,3 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Let the LanguageServer handle Go To Definition
-let g:go_def_mapping_enabled = 0
