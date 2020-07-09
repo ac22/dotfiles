@@ -8,3 +8,5 @@
 	excludesfile = /Users/anand/.gitignore_global
 [credential]
         helper = osxkeychain
+[pull]
+	rebase = false
