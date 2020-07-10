@@ -1,0 +1,20 @@
+" General settings
+set autowrite
+set clipboard=unnamed
+set expandtab
+set fileformat=unix
+set ignorecase
+set nohlsearch
+set noshowmatch
+set noshowmode
+set noswapfile
+set number
+set smartcase
+set surround
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+
+" Key Mappings
+inoremap jk <ESC>
+vnoremap jk <ESC>
