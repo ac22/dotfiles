@@ -2,15 +2,14 @@ call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'gruvbox-community/gruvbox'
 " Python
-Plug 'psf/black'
 Plug 'vim-python/python-syntax'
 call plug#end()
 
@@ -19,8 +18,7 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=light
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox
+colorscheme solarized8_flat
 
 " General settings
 set autowrite
@@ -44,7 +42,6 @@ au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 autocmd BufEnter *.tsv set noexpandtab list completeopt-=i tabstop=16
 autocmd BufEnter *.tsv inoremap <TAB> <C-V><TAB>
 autocmd BufEnter *.tsv execute ':CocDisable'
-autocmd BufWritePre *.py execute ':Black'
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
