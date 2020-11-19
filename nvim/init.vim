@@ -1,8 +1,9 @@
 call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -18,7 +19,7 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=light
-colorscheme solarized8_flat
+colorscheme gruvbox
 
 " General settings
 set autowrite
@@ -47,6 +48,9 @@ autocmd BufEnter *.tsv execute ':CocDisable'
 let g:airline#extensions#tabline#enabled = 1
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
+" go
+let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
 " python
 let g:python_highlight_all = 1
 
@@ -104,6 +108,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

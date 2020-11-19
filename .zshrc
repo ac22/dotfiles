@@ -3,7 +3,9 @@ bindkey 'jk' vi-cmd-mode
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export GOPATH="/Users/anand/.go"
+export GOBIN="/Users/anand/.go/bin"
+export PATH="$GOBIN:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 # Load version control information
 autoload -Uz vcs_info
@@ -23,22 +25,11 @@ setopt share_history
 setopt interactivecomments
 
 alias grep="grep --color=auto"
-alias py="python3"
 alias vi="/usr/local/bin/nvim"
 
 function json_diff() {
         diff <(gron $1) <(gron $2)
 }
-
-# zsh parameter completion for the dotnet CLI
-_dotnet_zsh_complete()
-{
-  local completions=("$(dotnet complete "$words")")
-
-  reply=( "${(ps:\n:)completions}" )
-}
-
-compctl -K _dotnet_zsh_complete dotnet
 
 fpath=(~/.zsh $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -49,8 +40,8 @@ fi
 # add color for man pages
 man() {
         env \
-                LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-                LESS_TERMCAP_md=$(printf "\e[1;31m") \
+                LESS_TERMCAP_mb=$(printf "\e[1;32m") \
+                LESS_TERMCAP_md=$(printf "\e[1;32m") \
                 LESS_TERMCAP_me=$(printf "\e[0m") \
                 LESS_TERMCAP_se=$(printf "\e[0m") \
                 LESS_TERMCAP_so=$(printf "\e[0;0;0m") \

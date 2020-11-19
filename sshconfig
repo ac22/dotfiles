@@ -1,0 +1,34 @@
+ServerAliveInterval 60
+
+Host github.com
+        HostName github.com
+        User achandran
+        IdentityFile ~/.ssh/id_rsa
+        AddKeysToAgent yes
+        UseKeychain yes
+
+Host rotogrinders-devbox
+        HostName devbox.rotogrinders.com
+        User anand
+        IdentityFile ~/.ssh/id_rsa_rotogrinders
+
+Host rotogrinders-gateway
+        HostName gateway.rotogrinders.com
+        User anand
+        IdentityFile ~/.ssh/id_rsa_rotogrinders
+
+Host rotogrinders-resultsdb-api
+        HostName 18.233.224.69
+        User anand
+        IdentityFile ~/.ssh/id_rsa_rotogrinders
+
+Host rotogrinders-bitbucket
+        HostName bitbucket.org
+        User git
+        IdentityFile ~/.ssh/id_rsa_rotogrinders
+        AddKeysToAgent yes
+        UseKeychain yes
+
+Host *
+        UseKeychain yes
+        AddKeysToAgent yes
