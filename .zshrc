@@ -2,7 +2,8 @@ bindkey -v
 bindkey 'jk' vi-cmd-mode
 
 export CLICOLOR=1
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
+export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
 export GOPATH="/Users/anand/.go"
 export GOBIN="/Users/anand/.go/bin"
 export PATH="$GOBIN:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -24,7 +25,6 @@ setopt inc_append_history
 setopt share_history
 setopt interactivecomments
 
-alias grep="grep --color=auto"
 alias vi="/usr/local/bin/nvim"
 
 function json_diff() {
@@ -37,15 +37,4 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# add color for man pages
-man() {
-        env \
-                LESS_TERMCAP_mb=$(printf "\e[1;32m") \
-                LESS_TERMCAP_md=$(printf "\e[1;32m") \
-                LESS_TERMCAP_me=$(printf "\e[0m") \
-                LESS_TERMCAP_se=$(printf "\e[0m") \
-                LESS_TERMCAP_so=$(printf "\e[0;0;0m") \
-                LESS_TERMCAP_ue=$(printf "\e[0m") \
-                LESS_TERMCAP_us=$(printf "\e[4;34m") \
-                man "$@"
-}
+export MANPAGER='nvim +Man!'
