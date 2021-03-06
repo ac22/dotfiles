@@ -8,5 +8,12 @@
                 "typescript.tsx",
                 "css",
                 "Markdown"
-        ]
+        ],
+        "languageserver": {
+                "golang": {
+                        "command": "gopls",
+                        "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+                        "filetypes": ["go"]
+                }
+        }
 }

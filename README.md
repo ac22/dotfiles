@@ -8,5 +8,5 @@ Browser: Firefox Developer Edition
 (Change the font used in the url bar by modifying userChrome.css found in a
 subfolder of ~/Library/Application Support/Firefox/Profiles)
 Terminal: iTerm2
-Color Scheme: Gruvbox Light (https://github.com/gruvbox-community/gruvbox/)
+Color Scheme: Solarized8 (https://github.com/lifepillar/vim-solarized8)
 Font: Triplicate T4c (https://practicaltypography.com/triplicate.html)

@@ -2,8 +2,8 @@ call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -18,8 +18,9 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=light
-colorscheme gruvbox
+set background=dark
+let g:solarized_diffmode = 'high'
+colorscheme solarized8_flat
 
 " General settings
 set autowrite
@@ -44,8 +45,9 @@ autocmd BufEnter *.tsv set noexpandtab list completeopt-=i tabstop=16
 autocmd BufEnter *.tsv inoremap <TAB> <C-V><TAB>
 autocmd BufEnter *.tsv execute ':CocDisable'
 
-" airline
+" Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " go
@@ -109,7 +111,6 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-
 function! s:show_documentation()
         if (index(['vim','help'], &filetype) >= 0)
                 execute 'h '.expand('<cword>')
@@ -135,17 +136,3 @@ augroup mygroup
         " Update signature help on jump placeholder
         autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-" Use `:Prettier` to format via prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
