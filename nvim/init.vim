@@ -3,8 +3,8 @@ call plug#begin()
 Plug '/usr/local/opt/fzf'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'srcery-colors/srcery-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -19,22 +19,28 @@ if (has("termguicolors"))
         set termguicolors
 endif
 set background=dark
-let g:solarized_diffmode = 'high'
-colorscheme solarized8_flat
+let g:srcery_inverse=0
+colorscheme srcery
+" Set diff colors for high visibility
+hi DiffAdd guifg=#1C1B19 guibg=#519F50
+hi DiffDelete guifg=#EF2F27 guibg=#EF2F27
+hi DiffChange guifg=#1C1B19 guibg=#0AAEB3
+hi DiffText guifg=#1C1B19 guibg=#FBB829
+
 
 " General settings
 set autowrite
-set completeopt-=preview
 set clipboard+=unnamed
+set completeopt-=preview
 set diffopt+=vertical
 set expandtab
 set fileformat=unix
 set ignorecase
 set nohlsearch
+set nonumber
 set noshowmatch
 set noshowmode
 set noswapfile
-set nonumber
 set smartcase
 set wildignore+=**/node_modules
 
