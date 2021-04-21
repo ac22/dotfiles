@@ -1,0 +1,17 @@
+MB Type: What is the OT Family?
+
+*****
+
+If you use Microsoft Office, or never heard of an OpenType feature, you needn’t read further. This is not for you.
+
+*****
+
+Triplicate has an OT family. The OT family is the same as the base family, but with all the styles unified under a single family name of Triplicate OT.
+
+Furthermore, all the typographic options, including small caps, are implemented as OpenType layout features (hence the OT suffix).
+
+The OT family is intended as an option for those who use page-layout programs, CSS, or other apps with strong support for OpenType features.
+
+For this reason, I don’t recommend using the OT family in Microsoft Office. It won’t explode, but many of the typographic features won’t be available, due to limitations of Office.
+
+You can install the OT family alongside the ordinary families. They won’t conflict with each other and show up separately in your Font menu.
