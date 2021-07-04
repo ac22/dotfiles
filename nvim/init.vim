@@ -2,9 +2,9 @@ call plug#begin()
 " General
 Plug '/usr/local/opt/fzf'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'gruvbox-community/gruvbox'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'srcery-colors/srcery-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -18,15 +18,9 @@ call plug#end()
 if (has("termguicolors"))
         set termguicolors
 endif
-set background=dark
-let g:srcery_inverse=0
-colorscheme srcery
-" Set diff colors for high visibility
-hi DiffAdd guifg=#1C1B19 guibg=#519F50
-hi DiffDelete guifg=#EF2F27 guibg=#EF2F27
-hi DiffChange guifg=#1C1B19 guibg=#0AAEB3
-hi DiffText guifg=#1C1B19 guibg=#FBB829
-
+set background=light
+let g:gruvbox_invert_selection = 0
+colorscheme gruvbox
 
 " General settings
 set autowrite
@@ -57,6 +51,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 " fzf
 let g:fzf_layout = { 'window': 'enew' }
 " go
+let g:go_auto_type_info = 1
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
 " python
